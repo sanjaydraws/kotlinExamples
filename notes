@@ -1,0 +1,23 @@
+
+kotlinc List1.kt -include-runtime -d  List1.jar
+java -jar List1.jar
+
+
+onCreateViewHolder:- 
+
+->create View object 
+-> creATE hOLDER TO Store this view Object 
+-> ViewHolder-just stores view so that it can be recyycled 
+
+
+onBindViewHolder - 
+->Binds data in views 
+->this method provides a view holder & position 
+-> Based on the position , it just binds the data into view which is 
+then shown in the app 
+
+Adapters 
+->it adapts your data in a format that can be consumed by recycler view 
+-> recycler view request data from adapater and provides the data  
+
+
