@@ -1,5 +1,4 @@
-// kotlinc List1.kt -include-runtime -d  List1.jar
-// java -jar List1.jar
+
 
 enum class Day {
     Sunday,
