@@ -9,6 +9,10 @@
 // public class MultiParam<T, E> extends AbstractParam<E> {
     
 //  }
+
+// public class Age extends AbstractParam<Integer> {
+//     // ...
+//     }
 public class Email extends AbstractParam<String> {
     public static void main(String[] args) {
 
@@ -16,6 +20,11 @@ public class Email extends AbstractParam<String> {
         // Email email = new Email();
         // email.setValue("test@gmail.com");
         // System.out.println(email.getValue());
+
+        //         Age age = new Age();
+        // age.setValue(25);
+        // Integer retrievedAge = age.getValue();
+        // int autounboxedAge = age.getValue();
 
         
         // MultiParam<String, Double> multiParam = new MultiParam<>(); 

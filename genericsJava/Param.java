@@ -1,3 +1,5 @@
+//Example 1 
+
 // Generics enable classes, interfaces, and methods to take other classes and interfaces as type parameters
 // To instantiate this class, provide a type argument in place of T. For example, Integer:
 
