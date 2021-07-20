@@ -24,6 +24,8 @@ fun main(){
     // val lambda1: (Int) -> Int = { a -> a *a} 
     // print(lambda1(2))
 
+
+
     // val lambda2:(String,String)-> String = {a ,b -> a + b} 
     // print(lambda2("Hi", "World")) 
 
@@ -32,14 +34,14 @@ fun main(){
 
     // ==================================================================
     // Lambdas can be used as class extension:
-    //it represents the implicit name of single parameter and we will discuss later.
-    // val lambda4:String.(Int) ->String = {
-    //     print(this)
-    //     print(it)
-    //     this + it
-    // } 
-    // val result = "Hello".lambda4(50) 
-    // print(result)// Hello50 
+    // it represents the implicit name of single parameter and we will discuss later.
+    val lambda4:String.(Int) ->String = {
+        print(this)
+        print(it)
+        this + it
+    } 
+    val result = "Hello".lambda4(50) 
+    print(result)// Hello50 
 
     // ==================================================
     // Kotlin program using shorthand form of lambda function –
