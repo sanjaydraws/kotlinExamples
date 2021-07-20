@@ -1,11 +1,18 @@
 // kotlinc List1.kt -include-runtime -d  List1.jar
-// java -jar List1.jar
+// java -jar Program1.jar
 
 // Lambdas Expressions are essentially anonymous functions that we can treat as values 
 // val lambdaName : Type = { argumentList -> codeBody }
 // The only part of a lambda that isn’t optional is the codeBody.
 // The argument list can be skipped when defining at most one argument and the Type can often be inferred by the Kotlin compiler. We don’t always need a variable as well, the lambda can be passed directly as a method argument.
 fun main(){
+
+    // var lambda = {
+    //     println("\nHello world")
+    // }
+    // lambda()
+    
+
     // val square = { number :Int -> number * number } 
     // print(square(3))
 

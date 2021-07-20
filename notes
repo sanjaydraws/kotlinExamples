@@ -1,5 +1,5 @@
 
-kotlinc List1.kt -include-runtime -d  List1.jar
+kotlinc Program1.kt -include-runtime -d  Program1.jar
 java -jar List1.jar
 
 
