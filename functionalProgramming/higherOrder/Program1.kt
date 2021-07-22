@@ -23,7 +23,9 @@ fun f1(s:String):Unit{
 fun f2(i1:Int, i2:Int):Int{
     return i1+i2 
 }
-
+fun f3(arg:Int):Int{
+    return arg
+}
 
 fun highOrderFun( lmbd : () ->Unit){
     // lmbd()
@@ -47,17 +49,22 @@ fun higherOrderFun4(): ((Int, Int) -> Int){
     return ::f2 
 }
 
+// not working
+// fun higherOrderFun5(f : ((Int)-> Int) ->Unit){
+//     f.invoke(::f3)
+// }
+
+
 fun main() {
     // lambda()
     highOrderFun(lambda)
     highOrderFun2 (lambda2) // 270 
     higherOrderFun3(12,2, "my string", ::f1,::f2)
-    // higherOrderFun3(x, y, l1) { l2 }
+    
 
     val square = higherOrderFun4()
     print("\n" + square(3,90)) // 93
 
-    
 
     
 }
@@ -67,3 +74,5 @@ fun main() {
 // read 
 // takeIf ,takeUnless , to , runCatching , also,apply, tun let  when 
 // ex  lmbd.takeIf 
+
+// retturn lamda from higher order 
