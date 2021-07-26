@@ -1,6 +1,6 @@
 
 kotlinc Program1.kt -include-runtime -d  Program1.jar
-java -jar List1.jar
+java -jar Program1.jar
 
 
 onCreateViewHolder:- 
