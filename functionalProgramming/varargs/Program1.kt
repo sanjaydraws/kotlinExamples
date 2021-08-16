@@ -22,16 +22,23 @@ fun passFun(vararg funs:()->Unit){
    }
 }
 fun f1(){
-    print("function 1")
+    print("function 1 , ")
 }
 fun f2(){
     print("function 2")
 }
 
+fun <T> printAny(vararg varg: T) {
+    varg.forEach { println(it) }
+}
+
 fun main(args: Array<String>) {
-    // printAnimal("Lion", "Cheetah", "Cat", "Hayena")
+    printAnimal("Lion", "Cheetah", "Cat", "Hayena")
+    print("\n")
     printAnimal2("Elephant","Lion", "Cheetah", "Cat", "Hayena")
     passFun(::f1,::f2)
+
+    printAny(34,56,89)
 }
 
 
