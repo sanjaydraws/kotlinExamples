@@ -46,10 +46,4 @@ fun main(){
         println("$index -> $value")
     }
     
-
-
-
-    
-
-
 }

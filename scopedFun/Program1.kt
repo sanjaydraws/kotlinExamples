@@ -38,15 +38,15 @@ fun letOperationFun3(){
 
 // if color it 's not null then inside block code will be run 
 fun letOperationFun4(){
-    val name = Cat().color?.let{
-        "$it"
-    }
-    print(name)
+    // val name = Cat().color?.let{
+    //     "$it"
+    // }
+    // print(name)
 
 }
 // used to perform an opration on the result of call chain 
 fun letOperation5(){
-    val x = mutableListOf("One", "Two","Three", "Four", "Five")
+    // val x = mutableListOf("One", "Two","Three", "Four", "Five")
     // val res = x.map { it.length }.filter { it>3 }
     // print(res)
 
@@ -57,10 +57,17 @@ fun letOperation5(){
     //  }
 }
 fun main() {
+    var number:Int? = null 
     letOperationFun()
     letOperationFun2() //Catkotlin.Unit
     letOperationFun3() // Catkotlin.Unit 
     letOperationFun4() // white
-    letOperation5() //[5, 4, 4]
+    // letOperation5() //[5, 4, 4]
+
+    var x = number?.let { 
+        val number2 = it + 1
+        number2
+     }  ?: 34
+     print(x) // 34 
        
 }
