@@ -9,6 +9,5 @@ val literal2 = { msg: String -> print(msg) }
 fun main(args: Array<String>) {
     literal() // Hello World 
     literal2("Hello How are you ")
-
     
 }
