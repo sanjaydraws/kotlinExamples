@@ -14,7 +14,7 @@
 // LazyThreadSafetyMode.None  -> unsafe thread 
 
 
-val ourValue:String by lazy{
+val ourValue:String by lazy(LazyThreadSafetyMode.NONE){
     println("Hello World") 
     callAnother() // only first time run
     "\nHello what is going on "
@@ -28,9 +28,7 @@ val ourValue:String by lazy{
      println(ourValue) //Hello what is going on
      println(ourValue) //Hello what is going on
      println(ourValue) //Hello what is going on
-
-
-
+    
 }
 
 
