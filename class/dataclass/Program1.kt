@@ -13,6 +13,7 @@
 // Data classes cannot be abstract, open, sealed or inner.
 
 
+
  data class Person(val name:String?=null, val age:Int? = null ){
 
     var excludeProp:Int = 34
