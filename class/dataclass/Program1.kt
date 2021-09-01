@@ -25,6 +25,7 @@
  // to exclude a property for generated implementation declare it inside data class 
 
 fun main(args: Array<String>) {
+    
     // val p1 = Person ()
     var  p1 = Person ("Justin", 27)
     val p2 = Person ("Justin", 27)
