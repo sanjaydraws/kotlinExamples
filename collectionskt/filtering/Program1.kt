@@ -42,7 +42,14 @@ fun main(args: Array<String>) {
     val filter4 = numbers4.filterNotNull().forEach{
         print(it + " ") // 1 Hello World 3.20
     }
-    print(filter4) //  kotlin.Unit
+    println(filter4) //  kotlin.Unit
+
+
+    //partition - it it will return pair of list , first melements are matches in seperate and that are not matched goes in another list 
+    val numbers5 = listOf("one", "two", "three", "four", "five")
+    val (matched, rest) = numbers5.partition { predicate -> predicate.length>3 }
+    println(matched) // [three, four, five]
+    println(rest) // [one, two]  
 
 
 
