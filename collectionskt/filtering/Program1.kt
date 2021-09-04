@@ -51,6 +51,28 @@ fun main(args: Array<String>) {
     println(matched) // [three, four, five]
     println(rest) // [one, two]  
 
+    // function that uses predicate to filter collection 
+    // any() -> it returns true  if atleast one element matches 
+    println(numbers5.any{ it.startsWith("t")}) // true 
+    // none() -> returns true if no elements matches with given predicate , if matches then return false 
+    println(numbers5.none{ it.startsWith("o")}) //false
+    // all() - it returns true if all element matches with given predicate 
+    println(numbers5.all { it.length > 3}) // false 
+
+
+    // all() returns true for any predicate for emptylist 
+    println(emptyList<Int>().all { it > 5 }) // true 
+
+
+    // any()  ,none() for without predicate 
+    // any() - return true if elements in list , false for empty list 
+    println(numbers5.any()) // true 
+    println(emptyList<Int>().any()) // false 
+
+    // none() -> return true if elements present in list , true for empty list 
+    println(numbers5.none()) // false 
+    println(emptyList<Int>().none()) // true 
+
 
 
 
