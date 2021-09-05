@@ -69,7 +69,19 @@ fun main(args: Array<String>) {
     val pair = listOf("key1" to 1, "key2" to 2, "key3" to 3, "key4" to 4)
     println(pair.unzip())
 
-    
+
+    // Associate -> Association transformations use to build maps from the collection elements and certain values associated with them.
+    //associateWith -  if element are eques then last element doesn't include 
+    val artists = listOf("Justin","Ariana" ,"Justin", "Drake", "Ed")
+    println(artists.associateWith { it.length }) //{Justin=6, Ariana=6, Drake=5, Ed=2} 
+
+
+    // println(artists.associateBy { it.first().lowercaseChar() })
+
+
+
+
+    // associateBy() can also be called with a value transformation function.
 
 
 
