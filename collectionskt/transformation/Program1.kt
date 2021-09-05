@@ -14,8 +14,6 @@ fun main(args: Array<String>) {
     println(l.map { transform -> transform *3 })  //[3, 6, 9] 
     println(l.map { it*9 }) // [9, 18, 27] 
 
-
-
     // to apply a transformation that additionally use element and index as argument  
     println(l.mapIndexed { index, value -> value+ index }) // [1, 3, 5] 
 
@@ -36,6 +34,12 @@ fun main(args: Array<String>) {
     // println(filterById)
     
     
+    // mapNotNull() function    if get null values on certain elements,that can be filtered.
+    val l2 = setOf(1,null,3,4)
+    println(l2.mapNotNull   { it }) // [1, 3, 4]
+    val l3 = setOf(1,56,3,4)
+    println(l3.mapIndexedNotNull { index, value -> if (index == 0) null else value * index }) //[56, 6, 12]
+
 
 
     
