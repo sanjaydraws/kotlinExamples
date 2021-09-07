@@ -75,13 +75,16 @@ fun main(args: Array<String>) {
     val artists = listOf("Justin","Ariana" ,"Justin", "Drake", "Ed")
     println(artists.associateWith { it.length }) //{Justin=6, Ariana=6, Drake=5, Ed=2} 
 
+    
+    // associateBy - takes function returns key based on elements value 
+    println(artists.associateBy { it.first().lowercaseChar() }) //{j=Justin, a=Ariana, d=Drake, e=Ed}
+        // associateBy() can also be called with a value transformation function.
+    println(artists.associateBy(keySelector = { it.first().uppercaseChar() }, valueTransform = { it.length }))
 
-    // println(artists.associateBy { it.first().lowercaseChar() })
 
 
 
 
-    // associateBy() can also be called with a value transformation function.
 
 
 
