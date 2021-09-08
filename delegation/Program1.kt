@@ -54,6 +54,6 @@ fun main(args: Array<String>) {
     d.print() // overriding  print method of interface
     print(d.msg) // 2 
 
-
+zzzz
 
 }
