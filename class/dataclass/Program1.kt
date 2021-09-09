@@ -18,6 +18,9 @@
 
     var excludeProp:Int = 34
 
+    fun personDetails():String?{
+        return "name=$name Age=$age"
+    }
         
 
  }
@@ -51,6 +54,8 @@ fun main(args: Array<String>) {
     val (name , age ) = p5
     print("name = $name  age =$age") //name = Chris  age =45
 
+    //call function
+   print( p5.personDetails() ) // name=Chris Age=45 
 
 
 
