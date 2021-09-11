@@ -5,7 +5,7 @@
 // subclass of sealed class can have multiple instance with its own state 
 
 
-// to declare sealed class put , put seled modifier before it's name 
+// to declare sealed class put  seled modifier before it's name 
 sealed interface Expr 
 
 sealed class MathExpr():Expr 
