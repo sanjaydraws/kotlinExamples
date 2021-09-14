@@ -1,10 +1,13 @@
 //  Object Exoression 
-// when you need to create an object of  a modification of some class that time without creating a subclass ,this case can be handled using object expressions and declarations 
+//  need to create an object of some class with slight modification, without explicitly creating a new subclass for it , this case can be handled using object expressions(java uses anonymous inner class )
 // object expression - create an object of anonymous classes
 
 // instance of anonymous class are called anonymous object becaus they are defined by an expression 
 
 // creating anonymous object 
+
+
+// ex1
 
 fun main(args: Array<String>) {
     val x = object{

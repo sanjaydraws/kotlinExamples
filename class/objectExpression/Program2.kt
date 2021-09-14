@@ -1,3 +1,5 @@
+//e2
+
 // inheriting anonymous objects from supertype 
 open class Mouse{
     fun onMouseClicked(){
