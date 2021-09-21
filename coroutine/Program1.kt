@@ -74,4 +74,35 @@ suspend fun myWorld() = coroutineScope{
     println("World2")
 }
 
+// =======================================================
+// scope Builder and cocurrency 
+// A coroutineScope builder can be used inside any suspending function to perform multiple concurrent operations. Let's
+// launch two concurrent coroutines inside a doWorld suspending function:
 
+
+fun  main() = runBlocking{
+    doWorld()
+    println("Done")
+}
+// Concurrently executes both sections
+suspend fun doWorld() = coroutineScope { // this: CoroutineScope
+    launch {
+        delay(2000L)
+        println("World 2")
+    }
+    launch {
+        delay(1000L)
+        println("World 1")
+    }
+    println("Hello")
+}
+
+
+/*output
+Hello
+World 1
+World 2
+Done
+ */
+
+ 
