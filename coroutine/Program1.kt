@@ -137,4 +137,45 @@ H1
 Done
 */
 
+// coroutine ARE light weight
+// It launches 100K coroutines and, after 5 seconds, each coroutine prints a dot.
+// Now, try that with threads (remove runBlocking, replace launch with thread, and replace delay with Thread.sleep ).
+// What would happen? (Most likely your code will produce some sort of out-of-memory error)
+
+fun main() = runBlocking{
+    repeat(100000) { // launch a lot of coroutines
+        launch {
+            delay(100L)
+            println("print")
+        }
+    }
+}
+
+
+// cancelation and timeouts 
+// ==============================
+// Cancelling coroutine execution
+// The launch function returns a Job that can be used to cancel the running coroutine:
+
+
+// As soon as main invokes job.cancel, we don't see any output from the other coroutine because it was cancelled. There
+// is also a Job extension function cancelAndJoin that combines cancel and join invocations.
+
+
+fun main() = runBlocking {
+    //sampleStart
+    val job = launch {
+        repeat(1000) { i ->
+            println("job:downloading $i ...")
+            delay(500L)
+            
+        }
+    }
+delay(1300L) // delay a bit
+println("main: I'm tired of waiting!")
+job.cancel() // cancels the job
+job.join() // waits for job's completion
+println("main: Now I can quit.")
+//sampleEnd
+}
 
