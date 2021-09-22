@@ -105,4 +105,36 @@ World 2
 Done
  */
 
- 
+//  an explicit job 
+//  ========================
+// launch coroutine builder returns a Job object that is handle to the launched coroutine 
+// and can be used  to explicitly wait for it's completion .
+
+
+fun main() = runBlocking{
+    
+    // launch coroutine and keep reference to it's job
+    val job1 = launch{
+        // 
+        delay(1000L)
+        println("H1")
+    }
+    println("H2")
+    val job2 = launch{
+        // 
+        delay(1000L)
+        println("H3")
+    }
+    job1.join() // wait until child coroutine completes
+    job2.join()
+    
+    println("Done")
+}
+/*
+H2
+H3
+H1
+Done
+*/
+
+
