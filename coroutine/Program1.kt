@@ -260,8 +260,42 @@ fun main() = runBlocking {
 
 
 
+    // Run non-cancellable  block Any attempt
+    import kotlinx.coroutines.*
+    fun main() = runBlocking {
+        val job = launch{
+            try{
+                repeat(100){
+                    i -> 
+                    println("job: im sleeping $i")
+                    delay(500L)
+                }
+            }
+            finally{
+                withContext(NonCancellable){
+                    println("job: i'm running finally")
+                    delay(100L)
+                    println("job: And I've just delayed for 1 sec because I'm non-cancellable")
+                }
+            }
+        }
+        delay(1300L)// delay a bit 
+        println("main: i'm tired of waiting ")
+        job.cancelAndJoin()
+        println("main: Now I can Quit")
+    }
+    
+ /**
+  * job: im sleeping 0
+job: im sleeping 1
+job: im sleeping 2
+main: i'm tired of waiting 
+job: i'm running finally
+job: And I've just delayed for 1 sec because I'm non-cancellable
+main: Now I can Quit
+   */   
 
-
+   
 
 
 
