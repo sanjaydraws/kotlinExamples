@@ -209,8 +209,53 @@ fun main() = runBlocking {
 
 
 
+    // Making computation code cancellable
+    // isActive is an extension property available inside the coroutine via the
+    // CoroutineScope object.
+    fun main() = runBlocking {
+        var startTime = System.currentTimeMillis()
+        var job = launch(Dispatchers.Default){
+            var nextPrintTime = startTime
+            var i = 0 
+            while(isActive){
+                //cancelable computational loop 
+                // print a message twice a second 
+                if(System.currentTimeMillis() >= nextPrintTime){
+                    println("job: Im sleeping ${i++}..")
+                    nextPrintTime += 500L
+                }
+            }
+        }
+        delay(1300L) // delay a bit 
+        println("I'm tired of waiting ")
+        job.cancelAndJoin() // cancel the job and waits for it completion
+        print("main : now i can quit")
+    }
+    
 
+    // Closing resources with  finally
 
+    // cancellable suspending function throw CancelationException which can be handled 
+    import kotlinx.coroutines.*
+    fun main() = runBlocking {
+        val job = launch{
+            try{
+                repeat(100){
+                    i -> 
+                    println("job: im sleeping $i")
+                    delay(500L)
+                }
+            }
+            finally{
+                println("job: i'm running finally")
+            }
+        }
+        delay(1300L)// delay a bit 
+        println("main: i'm tired of waiting ")
+        job.cancelAndJoin()
+        println("main: Now I can Quit")
+    }
+    
 
 
 
