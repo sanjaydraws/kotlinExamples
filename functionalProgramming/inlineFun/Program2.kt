@@ -50,6 +50,20 @@ fun main(){
  */
 
 
+// Reified Type Parameters
+
+
+// sometimes we need to access the type of parameter passed during the
+//  call. We have to simply the pass of the parameter at the time function calling and we can retrieve the type of 
+//  the parameter using a reified modifier.
+
+inline fun <reified T> func(){
+    print(T::class)
+}
+fun main(){
+    func<String>()
+}
+
 
 
 
