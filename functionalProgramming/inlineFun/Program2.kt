@@ -65,6 +65,18 @@ fun main(){
 }
 
 
+// Inline Properties
+// The inline modifier can be used on accessors of properties that don’t have a backing field. 
 
+fun main(){
+    print(flag) // true 
+}
 
+fun foo(i:Int):Int{
+    var a = i 
+    return a
+}
 
+inline var flag :Boolean 
+   get() = foo(10) == 10
+   set(flag) {flag}
