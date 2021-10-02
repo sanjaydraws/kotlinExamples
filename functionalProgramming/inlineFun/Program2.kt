@@ -80,3 +80,6 @@ fun foo(i:Int):Int{
 inline var flag :Boolean 
    get() = foo(10) == 10
    set(flag) {flag}
+
+
+   

@@ -261,6 +261,9 @@ fun main() = runBlocking {
 
 
     // Run non-cancellable  block Any attempt
+    //     in the rare case when you need to suspend in a cancelled
+    // coroutine you can wrap the corresponding code in withContext(NonCancellable) {...} using withContext function and
+    // NonCancellable context as the following example shows:
     import kotlinx.coroutines.*
     fun main() = runBlocking {
         val job = launch{
@@ -295,7 +298,52 @@ job: And I've just delayed for 1 sec because I'm non-cancellable
 main: Now I can Quit
    */   
 
-   
 
+
+
+//   Timeout
+// =================
+/*The most obvious practical reason to cancel execution of a coroutine is because its execution time has exceeded
+some timeout. While you can manually track the reference to the corresponding Job and launch a separate coroutine to
+cancel the tracked one after delay*/
+
+// example
+fun main() = runBlocking{
+    withTimeout(1300L){
+        repeat(1000){
+            i -> println("I'm sleeping $i")
+            delay(500L)
+        }
+    }
+}
+
+/* 
+I'm sleeping 0
+I'm sleeping 1
+I'm sleeping 2
+Exception in thread "main" kotlinx.coroutines.TimeoutCancellationException: */ 
+
+
+// use the withTimeoutOrNull function that is similar to withTimeout but returns null on timeout
+// instead of throwing an exception:
+
+
+
+fun main() = runBlocking{
+    val result = withTimeoutOrNull(1300L){
+         repeat(1000){
+             i -> println("I'm sleeping $i")
+             delay(500L)
+         }
+         "Done" // will get cancelled before it produces this result
+     }
+    println("Result is $result")
+ }
+
+ /* 
+ I'm sleeping 0
+I'm sleeping 1
+I'm sleeping 2
+Result is null */
 
 
