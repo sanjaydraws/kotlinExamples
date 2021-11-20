@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="nullSafety">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/nullSafety/program2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/nullSafety/program1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

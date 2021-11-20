@@ -5,7 +5,7 @@
 //  With the help of the inline keyword, we can return from the lambda expression itself
 //   and exit the function in which inlined function is called.
 
-/* 
+/*  
 var l = {
     println("Hello world")
     return 
@@ -14,8 +14,9 @@ var l = {
 fun main(){
     // l() //'return' is not allowed here
 }
+*/
 
- */
+ 
 
 
  
@@ -32,7 +33,8 @@ fun main(){
 
 
 // Noinline
-// want only some of the lambdas passed to an inline function to be inlined, we can mark some of the function parameters with the noinline modifier.
+// want only some of the lambdas passed to an inline function to be inlined,
+ we can mark some of the function parameters with the noinline modifier.
 
 
 /*

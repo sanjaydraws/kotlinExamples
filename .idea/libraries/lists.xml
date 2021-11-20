@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="lists">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/collectionskt/lists/immutable1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/collectionskt/lists/list1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/collectionskt/lists/list2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/collectionskt/lists/mutable1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

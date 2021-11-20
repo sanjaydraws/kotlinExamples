@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="kotlinExamples">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/list1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/loop2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/loop1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/firstapp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/nullable1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/loop3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lambdafun.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="objectExpression">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/class/objectExpression/Program1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/class/objectExpression/Program2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

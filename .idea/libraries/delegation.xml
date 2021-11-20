@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="delegation">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/delegation/Program5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/delegation/Program6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/delegation/Program4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/delegation/Program3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/delegation/Program1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/delegation/Program2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

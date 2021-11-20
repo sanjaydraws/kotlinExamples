@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="opps">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/opps/program5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/opps/program6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/opps/program1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/opps/program2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/opps/program4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/opps/program3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

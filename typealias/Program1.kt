@@ -6,7 +6,8 @@ data class User(
     val name:String? = null,
 )
 
-    typealias u = Int
+// alias for Int type and ArrayList
+    typealias u = Int 
     typealias l = ArrayList<String>
 fun main(){
     val users:l = ArrayList()
