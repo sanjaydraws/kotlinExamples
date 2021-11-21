@@ -11,18 +11,23 @@
 
 fun main(args: Array<String>) {
     val x = object{
-        val prop1 = "object"
-        val prop2 = "expr"
+        val prop1 = "prop1val"
+        val prop2 = "prop2val"
+        var prop3:String? = null
 
-      override  fun toString() = "$prop1 $prop2"
-      fun hello(){
-          println("Hello world")
-      }
+
+        override  fun toString() = "$prop1 $prop2"
+        fun hello(){
+            println("Hello world")
+        }
     }
-    
+
     // print an object  called toString()
     println(x) // object expr
-    x.hello() // Hello world 
+    x.hello() // Hello world
+    println(x.prop1) // prop1val
+    x.prop3 = "prop3Val"
+    println(x.prop3) //prop3Val
 
 
 }
