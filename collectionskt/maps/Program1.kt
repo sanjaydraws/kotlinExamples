@@ -1,59 +1,68 @@
 package collection.maps
 /**
- *
+ * immutable map
  * */
 
-data class User(val name:String)
 fun main() {
     val m1 = mapOf<Int,String>(12 to "a", 1 to "b")
     val m2 = mapOf("name" to "kali", "age" to 23)
-    println(m2)
+    println(m2) //{name=kali, age=23}
+    println(m2.size) //2
+    println(m2.keys) //[name, age]
+    println(m2.entries) // [name=kali, age=23]
+    println(m2.any()) // true // if have at least one entry
+    println(m2.values) // [kali, 23]
 
-    val hm2 = HashMap<String,Int>()
-    hm2.apply {
-        hm2["A"] = 90
-        hm2["B"] = 190
-        hm2["c"] = 190
-    }
-    val hm1 = HashMap<String,Int>()
-    hm1.apply {
-        hm1["A"] = 90
-        hm1["B"] = 190
-        hm1["c"] = 190
-    }
-    println(hm1) //{A=90, B=190, c=190}
+    // get values
+    println(m2.get("12")) // null
+    println(m2["name"]) // kali
+    println(m2.getValue("name"))// kali //get exception if key not found
 
-    for((k,v) in hm1){
-        println("$k = $v")
-    }
-    println(hm1.entries) // [A=90, B=190, c=190]
-    println(hm1.keys) //[A, B, c]
-    println(hm1.any()) // true // if have at least one entry
-    println(hm1.values)
+    // get default value if key doesn't have value
+    println(m2.getOrDefault("name","DefaultName"))
 
-    val hm3 = hm1.clone()
-    println(hm3)
-    hm2.onEach {
-        print(it.key + "->" + it.value +" ") //A->90B->190c->190
-    }
-    hm2.onEachIndexed { index, entry ->
-        print(" $index + -> + $entry") // 0 + -> + A=90 1 + -> + B=190 2 + -> + c=190
-    }
+    // Key and value contains
+    println(m2.containsKey("name")) // true
+    println(m2.contains("name")) // true
+    println(m2.containsValue(23))// true
 
-    // ==================================================
-    val hm4 = HashMap<String, Any>()
-    hm4.put("name", User("Jb"))
-    hm4.put("phone Num", User("121212"))
-    println(hm4)
+    //  If the key is not present in the map, it returns the result of a lambda function
+    val count = m2.getOrElse("name",{
+        0
+    })
+    println("count $count")
 
-    val l:ArrayList<HashMap<String, Any>> = ArrayList()
-    l.add(hm4)
-    l.add(hm4)
-    println(hm4) //{user1=User(name=Jb), user2=User(name=Jb1)}
-
-
-
+    // iterate map
+    println("onEach")
+    m2.onEach {
+        print("${it.key} ${it.value} ")
+    }// name kali age 23
+    println("onEachIndexed")
+    m2.onEachIndexed { index, entry ->
+        print(" $index $entry" )
+    }// 0 name=kali 1 age=23
+    println()
+    for((k,v) in m2){
+        print("$k = $v ")
+    }//name = kali age = 23
+    println()
+    m2.forEach { key, value ->
+        print("$key -> $value")
+    }//name -> kaliage -> 23
+    println()
 
 
+    // copy one map to another
+    // method1
+    val map1 = mapOf(
+        "A" to 1,
+        "B" to 2,
+        "C" to 3
+    )
+
+    val map2 = map1.toMap()
+    // method2
+    val map3 = mutableMapOf<String, Int>()
+    map3.putAll(map1)
 
 }
